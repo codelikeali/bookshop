@@ -81,10 +81,16 @@ $route['add_category'] = 'BookController/add_category';
 $route['add_book'] = 'BookController/add_book';
 $route['delete_category'] = 'BookController/delete_category';
 $route['delete_Book'] = 'BookController/delete_Book';
-
-
+$route['userOrder'] = 'BookController/userOrder';
+$route['send_order'] = 'BookController/send_order';
 
 //users
 $route['admin_users'] = 'BookController/admin_users';
 $route['delete_user'] = 'BookController/delete_user';
 // $route['delete-category'] = 'BookController/delete-category';
+
+
+
+//Order Users
+
+$route['create_order'] = 'OrderController/create_order';

@@ -3,6 +3,7 @@
 <button class="w3-button w3-margin-top w3-green" data-toggle="modal" data-target="#modelId">➕ Add New User</button>
 <div class="row">
     <h6 class="font-weight-medium font-size-7 ml-lg-1 mb-lg-8 pb-xl-1">All Users Detail</h6>
+
     <table class="table " id="order-table">
         <thead>
             <tr class="border">
@@ -10,11 +11,10 @@
                 <!-- <th scope="col" class="py-3 border-bottom-0 font-weight-medium">id</th> -->
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Name</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Email</th>
-                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Contact</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Contact</th
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">CNIC</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Role</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Password</th>
-                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Action</th>
 
             </tr>
         </thead>
@@ -25,9 +25,9 @@
 							
 							?>
             <tr class="border">
-                <td class="pl-3 pl-md-5 font-weight-normal align-middle py-6"><?=$data->name;?></td>
+                <th class="pl-3 pl-md-5 font-weight-normal align-middle py-6"><?=$data->name;?></th>
                 <td class="align-middle py-5"><?=$data->email;?></td>
-                <td class="pl-3 pl-md-5 font-weight-normal align-middle py-6"><?=$data->contact;?></td>
+                <th class="pl-3 pl-md-5 font-weight-normal align-middle py-6"><?=$data->contact;?></th>
                 <td class="align-middle py-5"><?=$data->cnic;?></td>
                 <td class="align-middle py-5"><?=$data->role;?></td>
                 <td><input class="align-middle py-5" type="password" onkeydown="UpdatePassword(this)" id="<?=$data->id?>" ></td>

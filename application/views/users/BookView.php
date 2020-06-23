@@ -3,7 +3,7 @@
 <div class="row">
     <h6 class="font-weight-medium font-size-7 ml-lg-1 mb-lg-8 pb-xl-1">Books</h6>
 
-    <table class="table mb-0" id="order-table">
+    <table class="table mb-0">
         <thead>
             <tr class="border">
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Image</th>

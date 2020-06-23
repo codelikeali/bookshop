@@ -103,8 +103,8 @@
     <div class="container">
         <header class="d-md-flex justify-content-between align-items-center mb-5">
             <h2 class="font-size-7 mb-4 mb-md-0">Trending Books</h2>
-            <a href="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/html-demo/shop/v3.html"
-                class="d-flex align-items-center h-primary">View All<span
+            <a href=""
+                class="d-flex align-items-center h-primary"><span
                     class="flaticon-next font-size-3 ml-2"></span></a>
         </header>
         <div class="site-search ml-xl-0 ml-md-auto w-r-100 flex-grow-1 mr-md-5 mt-2 mt-md-0 order-1 order-md-0">
@@ -130,6 +130,7 @@
                 </div>
             </form>
         </div>
+        <br>
         <div id="result"></div>
 
     </div>

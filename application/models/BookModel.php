@@ -141,6 +141,38 @@ class BookModel extends CI_Model {
         return $this->db->get('user')->result();
     }
 
+
+    //Get all Users Order
+    public function userOrder(){
+        
+
+        return $this->db->select('*')
+                          ->from('book')
+                          ->join('book_order', 'book.book_id = book_order.book_id')
+                        //   ->where('v.shop', $shop)
+                          ->get()->result();
+        
+
+        
+
+        
+    }
+
+
+    //send order to users
+    public function send_order(){
+
+       $id =  $this->input->get('id');
+        $data =  $this->db->set('status','success')
+             ->where('order_id',$id)
+            ->update('book_order');
+    
+            if($data){
+                $this->session->set_flashdata('message', 'Order Send Successfuly to Customer Address');
+                redirect('userOrder');
+            }
+    }
+
     // delete User
     public function delete_user(){
 

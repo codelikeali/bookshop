@@ -1,18 +1,22 @@
-<?php $this->load->view('users/header');?>
+<?php $this->load->view('admin/header');?>
+
 <div class="row">
     <h6 class="font-weight-medium font-size-7 ml-lg-1 mb-lg-8 pb-xl-1">Users Orders</h6>
 
     <table class="w3-table  w3-responsive mb-0 " id="order-table">
         <thead>
             <tr class="border">
-            <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Order ID</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Detail</th>
-                <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Shipping Name</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Buyer Name</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Buyer Contact</th>
-                <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Address</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Buyer Email</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium pl-3 pl-md-5">Buyer Address</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Price</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Category</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Description</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Buyer Name</th>
                 <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Status</th>
-                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Download</th>
+                <th scope="col" class="py-3 border-bottom-0 font-weight-medium">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +26,10 @@
 							
 							?>
             <tr class="border">
-            <td class="align-middle py-5"><?=$data->order_id;?></td>
-                <td class="pl-3 pl-md-5 font-weight-normal align-middle py-6">
+                <th class="pl-3 pl-md-5 font-weight-normal align-middle py-6">
                     <div class="d-flex align-items-center">
                         <a class="d-block" href="#">
-                            <img class="img-fluid" height="100px" width="100px"
+                            <img class="img-fluid" height="70px" width="70px"
                                 src="<?=base_url();?>upload/<?=$data->book_image;?>" alt="Image-Description">
                         </a>
                         <div class="ml-xl-4">
@@ -37,25 +40,26 @@
                                     tabindex="0"><?=$data->author_name;?></a></div>
                         </div>
                     </div>
-                </td>
+                </th>
                 <td class="align-middle py-5"><?=$data->user_name;?></td>
                 <td class="align-middle py-5"><?=$data->user_contact;?></td>
-                
+                <td class="align-middle py-5"><?=$data->user_email;?></td>
                 <td class="align-middle py-5"><?=$data->user_address;?></td>
                 <td class="align-middle py-5"><?=$data->book_price;?></td>
-    
-               
-               
+                <td class="align-middle py-5"><?=$data->book_category;?></td>
+                <td class="align-middle py-5">
+                    <span class="product__add-to-cart"><?=$data->book_desc;?></span>
+                </td>
+                <td class="align-middle py-5"><?=$data->user_name;?></td>
                 <td class="align-middle py-5"><?php if($data->status=='pending')
-                {echo '<span class="w3-orange">In Process</span>';}else{ echo '<span class="w3-green">Book send to your Address</span>';}?></td>
+                {echo '<span class="w3-orange">In Pending</span>';}else{ echo '<span class="w3-green">Order Success</span>';}?></td>
                 <td class="align-middle py-5">
                     <?php if($data->status=='pending'){?>
-                        <button onclick="return confirm('Are you sure?')" href="send_order?id=<?=$data->order_id?>"
-                        class="w3-button w3-red " disabled>In Process</button>
+                        <a onclick="return confirm('Are you sure?')" href="send_order?id=<?=$data->order_id?>"
+                        class="w3-button w3-red mb-5">Order Send</a>
                     <?php } else{?>
-                        <a href="<?=base_url();?>upload/<?=$data->book_pdf;?>" download>
-                        <button class="w3-button w3-black">Download Book</button>
-                    </a>
+                        <button
+                        class="w3-button w3-green" disabled>Order Completed</button>
                     <?php }?>
                 </td>
             </tr>
@@ -63,35 +67,11 @@
         </tbody>
     </table>
 </div>
-<?php $this->load->view('users/footer');?>
-<script src="<?=base_url()?>assets/vendor/jquery/dist/jquery.min.js"></script>
 
-<script src="<?=base_url()?>assets/datatable/datatables.min.js"></script>
 
+
+<?php $this->load->view('admin/footer');?>
 <script>
-function UpdatePassword(ele) {
-    if (event.key === 'Enter') {
-        const pass = ele.value;
-        const id = ele.id;
-        $.ajax({
-            type: "POST",
-            url: "<?php echo base_url('UpdatePass')?>",
-            data: {
-                pass: pass,
-                id: id
-            },
-
-            success: function(data) {
-                // $("#res").text(data);
-                alert(data);
-                // window.location = "<?php echo base_url('user') ?>";
-
-            }
-        });
-
-
-    }
-}
 
 $(function() {
     "use strict";
@@ -106,7 +86,5 @@ $(function() {
     });
 
 
-}); // End of use strict
-
-
+});
 </script>

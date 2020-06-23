@@ -4,8 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class AdminController extends CI_Controller {
 
     public function dashboard(){
-
-        $this->load->view('admin/admin-dash');
+        $this->load->model('AdminModel');
+        $data['usersDetail']= $this->AdminModel->usersDetail();
+		 $data['pending_orders']= $this->AdminModel->pending_orders();
+       $data['completed_orders']= $this->AdminModel->completed_orders();
+        $data['total_orders']= $this->AdminModel->total_orders();
+		$data['total_books']= $this->AdminModel->total_books();
+		$data['total_category']= $this->AdminModel->total_category();
+        $this->load->view('admin/admin-dash',$data);
 
     }
 
@@ -60,9 +66,9 @@ class AdminController extends CI_Controller {
                             <div class="product__hover d-flex align-items-center">
                                 <a href="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/html-demo/shop/single-product-v3.html"
                                     class="text-uppercase text-dark h-dark font-weight-medium mr-auto">
-                                    <span class="product__add-to-cart">ADD TO CART
+                                    <a class="product__add-to-cart w3-button w3-black" href="create_order?id='.$row->book_id.'&price='.$row->book_price.'">Buy this Book
                                     
-                                    </span>
+                                    </a>
                                     <span class="product__add-to-cart-icon font-size-4"><i
                                             class="flaticon-icon-126515"></i></span>
                                 </a>
@@ -77,7 +83,7 @@ class AdminController extends CI_Controller {
         }
         else
         {
-        $output .= ' </ul>';
+        $output .= '<h2> :( Sorry no data found!!</h2> </ul>';
         }
         echo $output;
         }

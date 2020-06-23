@@ -82,6 +82,20 @@ class BookController extends CI_Controller {
             $this->BookModel->delete_Book();
         }
 
+
+        //Get All Orders from Users
+            public function userOrder(){
+              $data['data'] =  $this->BookModel->userOrder();
+                $this->load->view('admin/userOrderView',$data);
+
+        }
+    
+ //Get All Orders from Users
+            public function send_order(){
+            $this->BookModel->send_order();
+            
+
+        }
             
     
 

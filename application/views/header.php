@@ -68,7 +68,7 @@ if(!$data):
                                 "animationSpeed": 500
                             }' data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
                             data-unfold-duration="500">
-                            <div class="d-flex align-items-center text-white font-size-2 text-lh-sm position-relative">
+                            <!-- <div class="d-flex align-items-center text-white font-size-2 text-lh-sm position-relative">
                                 <span
                                     class="position-absolute width-16 height-16 rounded-circle d-flex align-items-center justify-content-center bg-dark-1 text-white font-size-n9 left-0 top-0 ml-n2 mt-n1">3</span>
                                 <i class="flaticon-icon-126515 font-size-4 text-secondary-black-100"></i>
@@ -76,7 +76,7 @@ if(!$data):
                                     <span class="text-secondary-gray-1080 font-size-1">My Cart</span>
                                     <div class="font-size-2 text-secondary-black-100">$40.93</div>
                                 </div>
-                            </div>
+                            </div> -->
                         </a>
 
 
@@ -141,7 +141,7 @@ if(!$data):
                                     </ul> -->
                                 </li>
                                 <?php if($data): ?>
-                                <li class="nav-item"><a href="<?php if($data->name=="admin"){echo "admin";}else{echo "user-dashboard";}?>"
+                                <li class="nav-item"><a href="<?php if($data->role=="admin"){echo "admin";}else{echo "user-dashboard";}?>"
                                         class="nav-link link-black-100 mx-3 px-0 py-3 font-size-2 font-weight-medium">My Profile</a>
                                 </li>
                                 <?php endif; ?>
@@ -234,9 +234,14 @@ if(!$data):
                             <ul class="nav pr-xl-4">
                                 <?php if($data):?>
                                 <li class="nav-item"><a href="logout"
-                                        class="nav-link text-white mx-2 px-0 py-3 font-size-2 font-weight-medium">
+                                        class="nav-link  text-white mx-2 px-0 py-3 font-size-2 font-weight-medium">
                                         Logout</a></li>
                                 <?php endif;?>
+                                <?php if($data): ?>
+                                <li class="nav-item "><a href="<?php if($data->role=="admin"){echo "admin";}else{echo "user-dashboard";}?>"
+                                        class="nav-link link-black-100 mx-3 px-0 py-3 font-size-2 font-weight-medium">My Profile</a>
+                                </li>
+                                <?php endif; ?>
                                 <!-- <li class="nav-item"><a href="#"
                                         class="nav-link text-white mx-2 px-0 py-3 font-size-2 font-weight-medium">Best
                                         Seller</a></li>
@@ -483,120 +488,7 @@ if(!$data):
     </aside>
 
 
-    <aside id="sidebarContent1" class="u-sidebar u-sidebar__xl" aria-labelledby="sidebarNavToggler1">
-        <div class="u-sidebar__scroller js-scrollbar">
-            <div class="u-sidebar__container">
-                <div class="u-header-sidebar__footer-offset">
-
-                    <div class="d-flex align-items-center position-absolute top-0 right-0 z-index-2 mt-5 mr-md-6 mr-4">
-                        <button type="button" class="close ml-auto" aria-controls="sidebarContent1" aria-haspopup="true"
-                            aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false"
-                            data-unfold-target="#sidebarContent1" data-unfold-type="css-animation"
-                            data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
-                            data-unfold-duration="500">
-                            <span aria-hidden="true">Close <i class="fas fa-times ml-2"></i></span>
-                        </button>
-                    </div>
-
-
-                    <div class="u-sidebar__body">
-                        <div class="u-sidebar__content u-header-sidebar__content">
-
-                            <header class="border-bottom px-4 px-md-6 py-4">
-                                <h2 class="font-size-3 mb-0 d-flex align-items-center"><i
-                                        class="flaticon-icon-126515 mr-3 font-size-5"></i>Your shopping bag (3)</h2>
-                            </header>
-
-                            <div class="px-4 py-5 px-md-6 border-bottom">
-                                <div class="media">
-                                    <a href="#" class="d-block"><img src="<?=base_url();?>assets/img/120x180/img6.jpg"
-                                            class="img-fluid" alt="image-description"></a>
-                                    <div class="media-body ml-4d875">
-                                        <div class="text-primary text-uppercase font-size-1 mb-1 text-truncate"><a
-                                                href="#">Hard Cover</a></div>
-                                        <h2
-                                            class="woocommerce-loop-product__title h6 text-lh-md mb-1 text-height-2 crop-text-2">
-                                            <a href="#" class="text-dark">The Ride of a Lifetime: Lessons Learned from
-                                                15 Years as CEO</a>
-                                        </h2>
-                                        <div class="font-size-2 mb-1 text-truncate"><a href="#"
-                                                class="text-gray-700">Robert Iger</a></div>
-                                        <div class="price d-flex align-items-center font-weight-medium font-size-3">
-                                            <span class="woocommerce-Price-amount amount">1 x <span
-                                                    class="woocommerce-Price-currencySymbol">$</span>125.30</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-3 ml-3">
-                                        <a href="#" class="text-dark"><i class="fas fa-times"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="px-4 py-5 px-md-6 border-bottom">
-                                <div class="media">
-                                    <a href="#" class="d-block"><img src="<?=base_url();?>assets/img/120x180/img6.jpg"
-                                            class="img-fluid" alt="image-description"></a>
-                                    <div class="media-body ml-4d875">
-                                        <div class="text-primary text-uppercase font-size-1 mb-1 text-truncate"><a
-                                                href="#">Hard Cover</a></div>
-                                        <h2
-                                            class="woocommerce-loop-product__title h6 text-lh-md mb-1 text-height-2 crop-text-2">
-                                            <a href="#" class="text-dark">The Rural Diaries: Love, Livestock, and Big
-                                                Life Lessons Down</a>
-                                        </h2>
-                                        <div class="font-size-2 mb-1 text-truncate"><a href="#"
-                                                class="text-gray-700">Hillary Burton</a></div>
-                                        <div class="price d-flex align-items-center font-weight-medium font-size-3">
-                                            <span class="woocommerce-Price-amount amount">2 x <span
-                                                    class="woocommerce-Price-currencySymbol">$</span>200</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-3 ml-3">
-                                        <a href="#" class="text-dark"><i class="fas fa-times"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="px-4 py-5 px-md-6 border-bottom">
-                                <div class="media">
-                                    <a href="#" class="d-block"><img src="<?=base_url();?>assets/img/120x180/img6.jpg"
-                                            class="img-fluid" alt="image-description"></a>
-                                    <div class="media-body ml-4d875">
-                                        <div class="text-primary text-uppercase font-size-1 mb-1 text-truncate"><a
-                                                href="#">Paperback</a></div>
-                                        <h2
-                                            class="woocommerce-loop-product__title h6 text-lh-md mb-1 text-height-2 crop-text-2">
-                                            <a href="#" class="text-dark">Russians Among Us: Sleeper Cells, Ghost
-                                                Stories, and the Hunt.</a>
-                                        </h2>
-                                        <div class="font-size-2 mb-1 text-truncate"><a href="#"
-                                                class="text-gray-700">Gordon Corera</a></div>
-                                        <div class="price d-flex align-items-center font-weight-medium font-size-3">
-                                            <span class="woocommerce-Price-amount amount">6 x <span
-                                                    class="woocommerce-Price-currencySymbol">$</span>100</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-3 ml-3">
-                                        <a href="#" class="text-dark"><i class="fas fa-times"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="px-4 py-5 px-md-6 d-flex justify-content-between align-items-center font-size-3">
-                                <h4 class="mb-0 font-size-3">Subtotal:</h4>
-                                <div class="font-weight-medium">$750.00</div>
-                            </div>
-                            <div class="px-4 mb-8 px-md-6">
-                                <a href="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/html-demo/shop/cart.html"
-                                    class="btn btn-block py-4 rounded-0 btn-outline-dark mb-4">View Cart</a>
-                                <a href="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/html-demo/shop/checkout.html"
-                                    class="btn btn-block py-4 rounded-0 btn-dark">Checkout</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </aside>
+  
 
 
  

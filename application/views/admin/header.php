@@ -1,5 +1,6 @@
-<?php $this->load->view('css');?>
+<?php $this->load->view('css');  ?>
 <title>Admin Dashboard</title>
+
 <main id="content">
     <div class="container">
         <div class="row">
@@ -26,8 +27,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-0">
-                            <a class="nav-link d-flex align-items-center px-0 active" id="pills-one-example1-tab"
-                                data-toggle="pill" href="#pills-one-example1" role="tab"
+                            <a class="nav-link d-flex align-items-center px-0 active" href="admin" role="tab"
                                 aria-controls="pills-one-example1" aria-selected="false">
                                 <span class="font-weight-normal text-gray-600">Dashboard</span>
                             </a>
@@ -62,10 +62,9 @@
                         </li>
 
                         <li class="nav-item mx-0">
-                            <a class="nav-link d-flex align-items-center px-0" id="pills-five-example1-tab"
-                                data-toggle="pill" href="admin-buyers" role="tab"
+                            <a class="nav-link d-flex align-items-center px-0"  href="userOrder" role="tab"
                                 aria-controls="pills-five-example1" aria-selected="false">
-                                <span class="font-weight-normal text-gray-600">Buyers</span>
+                                <span class="font-weight-normal text-gray-600">Users Order</span>
                             </a>
                         </li>
 
